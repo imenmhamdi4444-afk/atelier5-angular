@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <h2>Modifier un hôtel :</h2>             
+
+  <form>
+    <div class="row g-3">
+      <!-- ID hotel (lecture seule) -->
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Hotel ID</label>
+        <input type="text" [(ngModel)]="currenthotel.idhotel" name="idhotel" class="form-control" readonly>
+      </div>
+
+      <!-- Nom -->
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Nom</label>
+        <input type="text" [(ngModel)]="currenthotel.nomhotel" name="nomhotel" class="form-control">
+      </div>
+
+      <!-- Prix / nuit -->
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Prix nuit</label>
+        <input type="number" [(ngModel)]="currenthotel.prixnuit" name="prixnuit" class="form-control">
+      </div>
+
+      <!-- Étoiles -->
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Étoiles</label>
+        <input type="number" [(ngModel)]="currenthotel.etoiles" name="etoiles" class="form-control">
+      </div>
+
+      <!-- Ville -->
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Ville</label>
+        <input type="text" [(ngModel)]="currenthotel.ville" name="ville" class="form-control">
+      </div>
+
+      <!-- Classification -->
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Catégorie</label>
+        <select class="form-select form-select-lg" [(ngModel)]="updatedClassId" name="idClass">
+          <option *ngFor="let cat of classifications" [value]="cat.idClass">
+            {{ cat.nomClass }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Bouton Modifier -->
+      <div class="col-12 mt-3">
+        <button type="button" (click)="updatehotel()" class="btn btn-success">Modifier</button>
+      </div>
+    </div>
+  </form>
+</div>
