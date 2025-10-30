@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators } from '@angular/forms';
 import { hotel } from '../model/hotel.model';
 import { hotelService } from '../services/hotel';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,6 +17,8 @@ export class Updatehotel implements OnInit {
   currenthotel!: hotel; // On utilisera '!' pour dire à TypeScript qu'elle sera initialisée
   classifications!: classification[];
   updatedClassId!: number;
+  myForm: any;
+  formBuilder: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -42,6 +44,19 @@ export class Updatehotel implements OnInit {
       // Redirection si l'hôtel n'existe pas
       this.router.navigate(['hotels']);
     }
+     this.myForm = this.formBuilder.group({  
+      idhotel: ['', [Validators.required
+      ]],
+      nomhotel: ['', [Validators.required]],
+      ville: ['', [Validators.required]],
+      prixnuit: ['', [Validators.required]],
+      etoiles: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      idclass: ['', [Validators.required]],
+
+    });
+    
+
   }
 
   updatehotel(): void { 

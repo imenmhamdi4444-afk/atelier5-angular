@@ -4,7 +4,8 @@ import { Addhotel } from './add-hotel/add-hotel';
 import { Updatehotel } from './update-hotel/update-hotel';
 import { RechercheParClassification } from './recherche-par-classification/recherche-par-classification';
 import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom';
-import { RegisterComponent } from './register/register';
+
+
 
 export const routes: Routes = [
     {path: "hotels", component : hotels},
@@ -13,7 +14,7 @@ export const routes: Routes = [
     {path: "rechercheParClassification", component : RechercheParClassification},
     {path: "rechercheParNom", component : RechercheParNomComponent},
     {path: "updatehotel/:id",  component: Updatehotel},
-    {path: "register", component: RegisterComponent},
+   
 
    
 ];

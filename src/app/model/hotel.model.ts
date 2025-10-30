@@ -6,6 +6,8 @@ export class hotel {
     ville?: string;
     prixnuit?: number;
     etoiles?: number;
+    email?: string;
     classification?: classification;
+
  
 }
